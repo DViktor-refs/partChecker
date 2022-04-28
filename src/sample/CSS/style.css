@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2021.07.02., 15:51:34
+    Author     : almat
+*/
+#AnchorPane{
+    
+    
+}
+.button {
+    -fx-background-color: red;
+}
+
+#menuPane {
+    -fx-background-color: #565e6b;
+}
+
+#titlePane {
+    -fx-background-color: #4a78c7;
+}
+
+#iv_pdf{
+    -fx-background-image: url("Assets/pdf.png");
+}
+
+#iv_xls{
+    -fx-background-image: url("Assets/xls.png");
+}
+
+#iv_txt{
+    -fx-background-image: url("Assets/txt.png");
+}
+
+#iv_help{
+    -fx-background-image: url("Assets/help.png");
+}
+

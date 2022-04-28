@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootView" maxHeight="600.0" maxWidth="1100.0" onMouseMoved="#handleMouseMovedAction" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Controller">
+    <children>
+        <Pane fx:id="titlePane" layoutX="-8.0" layoutY="-2.0" maxHeight="50.0" maxWidth="1120.0" onMouseDragged="#paneMouseDragged" onMousePressed="#paneMouseClicked" prefHeight="50.0" prefWidth="1120.0">
+            <children>
+                <Label layoutX="35.0" layoutY="15.0" text="Alkatrész lista ellenőrző alkalmazás" textFill="WHITE">
+                    <font>
+                        <Font name="Arial" size="18.0" />
+                    </font>
+                </Label>
+            <Circle fx:id="exitCircle" fill="DODGERBLUE" layoutX="1070.0" layoutY="25.0" onMouseExited="#exitCircleOnDragExited" onMouseMoved="#exitCircleOnDrag" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                <Label fx:id="exitLabel" layoutX="1063.0" layoutY="14.0" onMouseClicked="#startExitDialog" onMouseExited="#exitLabelOnExited" onMouseMoved="#exitLabelOnMoved" text="X" textFill="WHITE">
+                    <font>
+                        <Font name="Arial" size="20.0" />
+                    </font>
+                </Label>
+            </children></Pane>
+        <VBox id="menuPane" layoutY="47.0" prefHeight="555.0" prefWidth="80.0">
+            <children>
+            <ImageView fx:id="iv_reset" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#resetButtonClicked" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="110.0" />
+               </VBox.margin>
+            </ImageView>
+                <ImageView fx:id="iv_pdf" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#pdfButtonClicked" pickOnBounds="true" preserveRatio="true">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                    <image>
+
+                    </image>
+
+                </ImageView>
+                <ImageView fx:id="iv_xls" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#xlsButtonClicked" pickOnBounds="true" preserveRatio="true">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                    <image>
+
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iv_txt" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#txtButtonClicked" pickOnBounds="true" preserveRatio="true">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                    <image>
+
+                    </image>
+                </ImageView>
+                <ImageView fx:id="iv_start" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#startButtonClicked" pickOnBounds="true" preserveRatio="true">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </ImageView>
+            </children>
+        </VBox>
+        <TableView fx:id="table" layoutX="99.0" layoutY="142.0" onDragDropped="#onDragDraggedHereImage" onDragOver="#onDragOverDragHereImage" onMousePressed="#handleMouseClickOnTable" prefHeight="450.0" prefWidth="982.0">
+            <columns>
+                <TableColumn fx:id="firstNo" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" text="No" />
+                <TableColumn fx:id="firstRajzszam" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" resizable="false" text="Rajzszám(pdf/xls)" />
+                <TableColumn fx:id="firstDb" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" resizable="false" text="db(pdf/xls)" />
+                <TableColumn fx:id="firstMertekegyseg" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" text="Mértékegység" />
+                <TableColumn fx:id="secondRajzszam" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" resizable="false" text="Rajzszám(txt)" />
+                <TableColumn fx:id="secondNo" prefWidth="75.0" resizable="false" text="No(txt)" />
+                <TableColumn fx:id="secondDb" prefWidth="75.0" resizable="false" text="db(txt)" />
+                <TableColumn fx:id="secondMertekegyseg" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" text="Mértékegység" />
+                <TableColumn fx:id="secondStatus" maxWidth="80.0" minWidth="80.0" resizable="false" text="Status" />
+                <TableColumn fx:id="secondInfo" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" text="Info" />
+            </columns>
+        </TableView>
+        <Label id="fff" fx:id="firstFileLabel" layoutX="123.0" layoutY="66.0" />
+        <Label id="sfl" fx:id="secondFileLabel" layoutX="123.0" layoutY="97.0" />
+      <Label fx:id="secretButton" layoutX="1053.0" layoutY="88.0" prefHeight="36.0" prefWidth="28.0" />
+
+    </children>
+</AnchorPane>
