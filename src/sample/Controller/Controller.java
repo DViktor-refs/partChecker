@@ -512,6 +512,7 @@ public class Controller implements Initializable {
             if(!isFirstFileLabelEmpty()) {
                 rawList = modelProcessor.fillRawList(new File(firstFileLabel.getText()), modelProcessor.isValidFile(new File(firstFileLabel.getText())));
                 modelProcessor.fillFlists(rawList);
+
             }
             if(!isSecondFileLabelEmpty()) {
                 rawList = modelProcessor.fillRawList(new File(secondFileLabel.getText()), modelProcessor.isValidFile(new File(secondFileLabel.getText())));
@@ -760,8 +761,8 @@ public class Controller implements Initializable {
     public void startExitDialog(MouseEvent event) {
 
         Alert dg = new Alert(Alert.AlertType.CONFIRMATION);
-        dg.setTitle("Kilépés");
-        dg.setContentText("Biztosan ki akarsz lépni az alkalmazásból?");
+        dg.setTitle("Exit");
+        dg.setContentText("Are you sure you want to exit the application?");
 
         Optional<ButtonType> result = dg.showAndWait();
 

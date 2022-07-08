@@ -73,9 +73,7 @@ public class ModelProcessor implements FileProcessorInterface, JFXTableInterface
 
         switch (type) {
             case "TXT" -> result = txt2list(file);
-
             case "XLSX" -> result = xls2list(file);
-
             case "PDF" -> result = pdf2list(file);
         }
         return result;
@@ -84,6 +82,7 @@ public class ModelProcessor implements FileProcessorInterface, JFXTableInterface
     @Override
     public void fillFlists(List<String> rawList) {
         clearDataLists("f");
+
         if (pdfProcessor.fillLists(rawList, PDFNO).size() > 1) {
             fNo = pdfProcessor.fillLists(rawList, PDFNO);
             fDb = pdfProcessor.fillLists(rawList, PDFDB);
@@ -292,6 +291,7 @@ public class ModelProcessor implements FileProcessorInterface, JFXTableInterface
         } catch (IOException e) {
             log("pdf2list", "IOException, "+e);
         }
+
         return result;
     }
 
